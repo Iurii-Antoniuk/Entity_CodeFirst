@@ -19,7 +19,7 @@ namespace ORM_Saving_Forms
                 int monthsPassed = Math.Abs((end.Month - begin.Month) + 12 * (end.Year - begin.Year));
                 foreach (SavingAccount acc in Accounts)
                 {
-                    double interest = acc.StartAmount * Math.Pow(1 + acc.Rate, monthsPassed);
+                    double interest = acc.StartAmount * Math.Pow(1 + acc.Rate, monthsPassed) - acc.StartAmount;
                     interestsGenerated += interest;
                 }
                 return interestsGenerated;
